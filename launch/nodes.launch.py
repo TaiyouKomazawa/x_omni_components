@@ -74,7 +74,7 @@ def generate_launch_description():
     tf2_imu_pos = Node(
         package="tf2_ros",
         executable="static_transform_publisher",
-        arguments = "0 0 0.092 0 0 0 base_link imu_frame".split(' ')
+        arguments = "0 0 0.092 0 0 0 base_link imu_link".split(' ')
     )
 
     return LaunchDescription([
