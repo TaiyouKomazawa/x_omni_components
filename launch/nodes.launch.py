@@ -61,7 +61,7 @@ def generate_launch_description():
         package='rplidar_ros',
         executable='rplidar_node',
         parameters=[
-            {'serial_baudrate_':    115200},
+            {'serial_baudrate':     115200},
             {'serial_port':         LaunchConfiguration('lidar_port')},
         ]
     )
