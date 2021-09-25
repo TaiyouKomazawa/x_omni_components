@@ -66,6 +66,17 @@ def generate_launch_description():
         ]
     )
 
+    tf2_lidar_pos = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        arguments = "0 0 0.155 0 0 0 base_link laser_frame".split(' ')
+    )
+    tf2_imu_pos = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        arguments = "0 0 0.092 0 0 0 base_link imu_frame".split(' ')
+    )
+
     return LaunchDescription([
         omni_serial_path_launch_arg,
         port_launch_arg,
@@ -75,4 +86,6 @@ def generate_launch_description():
         ros2_x_omni_launch,
         udp_joycon_launch,
         rplidar_ros_node,
+        tf2_lidar_pos,
+        tf2_imu_pos,
     ])
