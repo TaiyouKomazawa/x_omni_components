@@ -69,7 +69,7 @@ def generate_launch_description():
     tf2_lidar_pos = Node(
         package="tf2_ros",
         executable="static_transform_publisher",
-        arguments = "0 0 0.155 0 0 0 base_link laser_frame".split(' ')
+        arguments = "0 0 0.155 3.14159265359 0 0 base_link laser_frame".split(' ')
     )
     tf2_imu_pos = Node(
         package="tf2_ros",
